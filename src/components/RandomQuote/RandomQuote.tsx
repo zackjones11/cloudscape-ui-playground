@@ -29,7 +29,11 @@ export const RandomQuote = () => {
       <SpaceBetween size='s'>
         <Button onClick={handleClick} loading={isFetching}>Quote of the day</Button>
 
-        {!isFetching && data?.content && <Alert>{data.content}</Alert> }
+        {!isFetching && data?.content && 
+          <Alert>
+            <span aria-label="Quote">{data.content}</span>
+          </Alert> 
+        }
       </SpaceBetween>
     </>
   )
