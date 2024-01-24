@@ -15,7 +15,8 @@
     "@cloudscape-design/components": "^3.0.503",
     "@cloudscape-design/global-styles": "^1.0.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.3.0",

@@ -1,8 +1,14 @@
-import { Button } from '@cloudscape-design/components'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+import { RandomQuote } from './components'
+
+const queryClient = new QueryClient()
 
 const App = () => {
   return (
-    <>it works <Button>Test</Button></>
+    <QueryClientProvider client={queryClient}>
+      <RandomQuote />
+    </QueryClientProvider>
   )
 }
 
