@@ -1,23 +1,41 @@
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { Container, SpaceBetween } from '@cloudscape-design/components'
+import { AppLayout, Container, ContentLayout, Header, SpaceBetween, Toggle } from '@cloudscape-design/components'
 
 import { RandomQuote, DogBreedsAutosuggest } from './components'
-
-const queryClient = new QueryClient()
+import { useMode } from './hooks'
 
 const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <SpaceBetween size='m'>
-        <Container>
-          <RandomQuote />
-        </Container>
+  const { isDarkMode, toggleMode } = useMode()
 
-        <Container>
-          <DogBreedsAutosuggest />
-        </Container>
-      </SpaceBetween>
-    </QueryClientProvider>
+  return (
+    <AppLayout
+      navigationHide
+      toolsHide
+      content={
+        <ContentLayout
+          header={
+            <SpaceBetween size="m">
+              <Header variant="h1" description="A simple playground for me to try out different elements of Cloudscape Design System">
+                Cloudscape Playground
+              </Header>
+
+              <Toggle checked={isDarkMode} onChange={toggleMode}>
+                Dark mode
+              </Toggle>
+            </SpaceBetween>
+          }
+        >
+          <SpaceBetween size='m'>
+            <Container>
+              <RandomQuote />
+            </Container>
+
+            <Container>
+              <DogBreedsAutosuggest />
+            </Container>
+          </SpaceBetween>
+        </ContentLayout>
+      }
+    />
   )
 }
 
