@@ -12,6 +12,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@cloudscape-design/components": "^3.0.503",
+    "@cloudscape-design/global-styles": "^1.0.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

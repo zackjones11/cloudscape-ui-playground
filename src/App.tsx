@@ -1,6 +1,8 @@
+import { Button } from '@cloudscape-design/components'
+
 const App = () => {
   return (
-    <>it works</>
+    <>it works <Button>Test</Button></>
   )
 }
 

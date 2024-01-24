@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import '@cloudscape-design/global-styles'
+
 import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
