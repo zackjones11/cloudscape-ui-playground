@@ -6,12 +6,19 @@ import { GET_ALL_DOG_BREEDS, getAllDogBreeds } from '~/api/dog-breeds'
 
 export const DogBreedsAutosuggest = () => {
   const [selected, setSelected] = useState<string>('')
+  const [isOpen, setIsOpen] = useState(false)
 
-  const { data: breeds } = useQuery(GET_ALL_DOG_BREEDS, getAllDogBreeds)
+  const { data: breeds } = useQuery(
+    GET_ALL_DOG_BREEDS, 
+    getAllDogBreeds, 
+    { enabled: isOpen }
+  )
 
   return (
     <SpaceBetween size='s'>
       <Autosuggest
+        onFocus={() => setIsOpen(true)}
+        onBlur={() => setIsOpen(false)}
         onChange={({ detail }) => setSelected(detail.value)}
         enteredTextLabel={(value) => `${value}`}
         value={selected}
